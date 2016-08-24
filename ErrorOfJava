@@ -1,0 +1,9 @@
+JVM的内存结构：
+堆（Heap）：用来存放Java对象实例和数组。是Java GC的主要对象
+栈（stack）：Java方法栈，主要存放局部变量和操作数栈，为线程私有。使用递归的时候如果栈的调用深度超出了栈的大小的话会出现StackOverflowError
+JVM方法区：主要存放已经加载的类信息，如构造函数信息，方法信息和常量，方法区是永久带的一个部分
+本地方法栈（native stack）：存放native方法，native方法是使用C++实现的函数
+PC寄存器：存放下一条指令在在方法中的偏移量。
+StackOverflow：-Xss，当递归调用太深就会出现这个错误
+
+OutOfMemoryErro:-XX:+HeapDumpOnOutOfMemoryErrorjvm，原因：memory leak，需要的内存大于实际有的内存，可以使用参数调大内存容量
